@@ -182,9 +182,9 @@ console.log(howManyDays(new Date(2022, 5, 16)));
 */
 
 /// Il 10 è uno con cui ho avuto particolari porblemi ho provato a farlo secondo le istruzioni
-// che abbiamo visto venerdi ma non riesco a farlo andare correttamente :-(
+// che abbiamo visto venerdi ma non riesco a farlo andare correttamente :-( però il resto funziona
 
-let isTodayMyBirthday = function (birthday, today) {
+/*let isTodayMyBirthday = function (birthday, today) {
   let currentMonth = String(today.getMonth());
   let currentDay = String(today.getDate());
   let arrayOfDates = birthday.split("/");
@@ -192,8 +192,8 @@ let isTodayMyBirthday = function (birthday, today) {
   if (currentMonth === monthBirth && currentDay === dayFirst)
     console.log("yess");
 };
-isTodayMyBirthday("11/6/1990", new Date());
-isTodayMyBirthday("16/2/1584", new Date());
+isTodayMyBirthday(new Date(), "11/6/1990");
+isTodayMyBirthday(new Date(), "16/2/1584");
 // Arrays & Oggetti
 
 // NOTA: l'array "movies" usato in alcuni esercizi è definito alla fine di questo file
@@ -381,9 +381,6 @@ console.log(newArrey);
    nel millennio scorso contenuti nell'array "movies" fornito.
 */
 let onlyInLastMillennium = movies.map((movie) => parseInt(movie.Year));
-
-console.log(onlyInLastMillennium);
-
 let found1 = onlyInLastMillennium[0];
 let findInd1 = 0;
 let founMovie1 = movies[0];
@@ -392,9 +389,6 @@ for (let i = 0; i < onlyInLastMillennium.length; i++) {
   const element1 = onlyInLastMillennium[i];
   if (element1 >= 2000) {
     console.log(element1);
-    found1 = element1;
-    findInd1 = i;
-    founMovie1 = movies[i];
   }
 }
 
@@ -500,10 +494,13 @@ const assCssClass = () => {
   let classCss = document.querySelectorAll("tr");
   classCss.classList.add("Test");
 };
+
+/////// 29 FATTOOOOOOOO!!!
 // [EXTRA] JS Avanzato
 
 /* ESERCIZIO 27
-  Crea una funzione chiamata "halfTree" che riceve un numero come parametro e costruisce un mezzo albero di "*" (asterischi) dell'altezza fornita.
+  Crea una funzione chiamata "halfTree" che riceve un numero come parametro e costruisce un mezzo
+  albero di "*" (asterischi) dell'altezza fornita.
 
   Esempio:
   halfTree(3)
@@ -527,5 +524,17 @@ const assCssClass = () => {
 */
 
 /* ESERCIZIO 29
-  Crea una funzione chiamata "isItPrime" che riceve un numero come parametro e ritorna true se il numero fornito è un numero primo.
+  Crea una funzione chiamata "isItPrime" che riceve un numero come parametro e ritorna true
+   se il numero fornito è un numero primo.
 */
+let isItPrime = (num) => {
+  for (let i = 2; num > i; i++) {
+    if (num % i === 0) return false;
+  }
+  return num > 1;
+};
+console.log(isItPrime(5));
+console.log(isItPrime(1));
+console.log(isItPrime(2));
+console.log(isItPrime(17));
+console.log(isItPrime(25));
